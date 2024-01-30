@@ -44,23 +44,23 @@ local function main()
             table.insert(pixels, {x = x, y = y, color = randcolor()})
             table.insert(
                 pixels, {x = x, y = y, color = 
-                            {
-                                r = string.format("%02X", (x * y) % 255),
-                                g = string.format("%02X", (x * y) % 255),
-                                b = string.format("%02X", (x * y) % 255),
-                                a = string.format("%02X", (x * y) % 255) 
-                            }
-                        }
+                    {
+                        r = string.format("%02X", (x * y) % 255),
+                        g = string.format("%02X", (x * y) % 255),
+                        b = string.format("%02X", (x * y) % 255),
+                        a = string.format("%02X", (x * y) % 255) 
+                    }
+                }
             )
             table.insert(
                 pixels, {x = x, y = y, color = 
-                            {
-                                r = string.format("%02X", (x + y) % 255),
-                                g = string.format("%02X", (x + y) % 255),
-                                b = string.format("%02X", (x + y) % 255),
-                                a = string.format("%02X", (x + y) % 255) 
-                            }
-                        }
+                    {
+                        r = string.format("%02X", (x + y) % 255),
+                        g = string.format("%02X", (x + y) % 255),
+                        b = string.format("%02X", (x + y) % 255),
+                        a = string.format("%02X", (x + y) % 255) 
+                    }
+                }
             )
         end
     end

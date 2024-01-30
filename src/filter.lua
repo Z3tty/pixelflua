@@ -26,21 +26,18 @@ function pxf_write_image(pixels)
     end
 end
 
-local RED    = {r="FF", g="00", b="00", a="FF"}
-local GREEN  = {r="00", g="FF", b="00", a="FF"}
-local BLUE   = {r="00", g="00", b="FF", a="FF"}
-local WHITE  = {r="FF", g="FF", b="FF", a="FF"}
-local BLACK  = {r="00", g="00", b="00", a="FF"}
-local CLEAR  = {r="00", g="00", b="00", a="00"}
-
 local function main()
     print("Pixelflua -- " .. arg[0])
     local w, h = pxf_canv_size()
     local start = os.clock()
     local pixels = {}
     local function randcolor()
-        local colors = {RED, GREEN, BLUE, WHITE, BLACK, CLEAR}
-        return colors[math.random(#colors)]
+        return {
+            r = string.format("%02X", math.random(0, 255)),
+            g = string.format("%02X", math.random(0, 255)),
+            b = string.format("%02X", math.random(0, 255)),
+            a = string.format("%02X", math.random(0, 255))
+        }
     end
     for x = 1, w do
         for y = 1, h do
